@@ -1,0 +1,12 @@
+{
+  "drivers": [
+    {
+      "id": 1,
+      "name": "Ivan",
+      "car": "VW Transporter",
+      "cargo": true,
+      "passenger": true,
+      "outBoard": false
+    }
+  ]
+}

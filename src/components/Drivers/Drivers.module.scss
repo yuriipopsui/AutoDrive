@@ -1,0 +1,19 @@
+.drivers {
+  min-height: 85vh;
+  background-color: lightgray;
+
+  &__title {
+    font-size: 30px;
+    color: #1e1e1e;
+  }
+
+  &__text {
+    max-width: 50vw;
+    padding: 40px 0;
+    margin: 0 auto;
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 600;
+    color: #fff;
+  }
+}

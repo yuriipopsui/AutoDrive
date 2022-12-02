@@ -1,0 +1,48 @@
+.formOrder {
+  width: 80vw;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+
+  &_input input {
+    display: flex;
+    flex-direction: column;
+    width: 35vw;
+    font-size: 18px;
+    line-height: 32px;
+    margin: 5px 10px;
+    border-radius: 5px;
+    padding-left: 10px;
+    border: none;
+    margin-bottom: 30px;
+  }
+
+  &_input label {
+    font-size: 18px;
+    line-height: 22px;
+    color: #1e1e1e;
+    font-weight: 600;
+  }
+
+  &_input select {
+    width: 100%;
+    font-size: 18px;
+    line-height: 32px;
+    margin: 5px 20px;
+    border-radius: 5px;
+    padding: 5px;
+    border: none;
+  }
+
+  &_button {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 15px 25px;
+    background-color: lightblue;
+    margin: 30px auto;
+    border: 2px solid #f5f5f5;
+    border-radius: 7px;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,22 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  width: 50vw;
+  font-size: 24px;
+  font-weight: 600;
+  font-style: italic;
+
+  &__link {
+    text-decoration: none;
+    color: #1e1e1e;
+
+    &:hover {
+      transform: translateY(-1px);
+      transition: all 0.3s;
+    }
+  }
+
+  & a+a {
+    margin-right: 15px;
+  }
+}

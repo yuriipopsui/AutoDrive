@@ -1,0 +1,9 @@
+.createTripDriver {
+  min-height: 85vh;
+  background-color: lightblue;
+
+  &__title {
+    font-size: 28px;
+    padding: 25px 0;
+  }
+}

@@ -1,0 +1,20 @@
+.footer {
+  min-height: 20vh;
+  background-color: #1e1e1e;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+  justify-content: space-around;
+
+  // &__wrapper {
+  //   width: 80vw;
+  //   display: flex;
+  //   
+  //   margin: 0 auto;
+  // }
+
+  & a {
+    color: #fff;
+  }
+}

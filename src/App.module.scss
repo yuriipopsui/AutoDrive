@@ -1,0 +1,26 @@
+a {
+  text-decoration: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: [sidebar] 1fr [content] 3fr;
+
+  &__sidebar {
+    grid-column: sidebar;
+    background-color: aqua;
+  }
+
+  &__content {
+    grid-column: content;
+  }
+}

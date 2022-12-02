@@ -1,0 +1,12 @@
+.createTrip {
+  min-height: 85vh;
+  background-color: lightblue;
+
+  &__title {
+    width: 70vw;
+    font-size: 28px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 25px 0;
+  }
+}

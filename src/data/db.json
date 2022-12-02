@@ -2,11 +2,43 @@
   "drivers": [
     {
       "id": "d1",
-      "name": "Ivan",
+      "name": "Mykola",
       "car": "VW Transporter",
       "cargo": true,
       "passenger": true,
-      "outBoard": false
+      "outBoard": false,
+      "trips": [
+        {
+          "date": "15.05.2022",
+          "route": "Kyiv-Lviv",
+          "passengers": [
+            "Klava",
+            "Slava",
+            "Vasja"
+          ],
+          "car": "VW Transporter"
+        },
+        {
+          "date": "12.07.2022",
+          "route": "Lviv-Kolomyja",
+          "passengers": [
+            "Sonja",
+            "Vitja",
+            "Vova"
+          ],
+          "car": "VW Transporter"
+        },
+        {
+          "date": "22.07.2022",
+          "route": "Kolomyja-Kyiv",
+          "passengers": [
+            "Jack",
+            "John",
+            "James"
+          ],
+          "car": "VW Transporter"
+        }
+      ]
     }
   ],
   "passengers": [

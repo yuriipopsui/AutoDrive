@@ -1,0 +1,12 @@
+.tripCard {
+  width: 40vw;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+
+  margin: 25px auto;
+}

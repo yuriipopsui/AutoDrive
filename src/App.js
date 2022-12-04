@@ -1,18 +1,26 @@
 import styles from './App.module.scss';
 import { Routes, Route } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import Header from './components/Header/Header';
 import Login from './components/Login/Login';
 import Home from './components/Home/Home';
 import Drivers from './components/Drivers/Drivers';
 import Passengers from './components/Passengers/Passengers';
 import CreateTrip from './components/Passengers/CreateTrip/CreateTrip';
+import TripSearch from './components/TripSearch/TripSearch';
 import MyTrips from './components/Passengers/MyTrips/MyTrips';
 import Footer from './components/Footer/Footer';
 import Sidebar from './components/Sidebar/Sidebar';
 import CreateTripDriver from './components/Drivers/CreateTripDriver/CreateTripDriver';
 import MyTripsDriver from './components/Drivers/MyTripsDriver/MyTripsDriver';
+import { tripSearchSelector } from './store/selectors/tripSearchSelector';
 
 function App(props) {
+
+  console.log(useSelector(tripSearchSelector));
+  const tripsRequest = useSelector(tripSearchSelector);
+
+
   return (
     <div className={styles.App}>
 
@@ -26,9 +34,7 @@ function App(props) {
             <Route path="/" index element={<Home store={props.store} />} />
             <Route path="drivers" element={< Drivers store={props.store} />} />
             <Route path="passengers" element={< Passengers store={props.store} />} />
-            {/* <Route path="passengers" element={< Passengers store={props.store} />}>
-              <Route path="create_trip" element={< CreateTrip />} />
-            </Route> */}
+            <Route path="tripsearch" element={< TripSearch tripsRequest={tripsRequest} />} />
             <Route path="login" element={< Login store={props.store} />} />
             <Route path="passengers/create_trip" element={< CreateTrip store={props.store} />} />
             <Route path="passengers/my_trips" element={< MyTrips store={props.store} />} />

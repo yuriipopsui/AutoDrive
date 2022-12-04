@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './FormOrder.module.scss';
 import ModalSuccess from '../ModalSuccess/ModalSuccess';
 
@@ -6,12 +7,14 @@ import ModalSuccess from '../ModalSuccess/ModalSuccess';
 
 const FormOrder = (props) => {
 
+  const navigate = useNavigate();
+
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const openModalHandler = (e) => {
     e.preventDefault();
     setModalIsOpen(true);
-
+    return navigate('/tripsearch')
   }
 
   return (

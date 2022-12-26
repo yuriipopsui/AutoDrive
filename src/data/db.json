@@ -2,7 +2,7 @@
   "requests": [
     {
       "id": "r1",
-      "passengerName": "Klava",
+      "name": "Klava",
       "date": "02.12.2022",
       "startPoint": "Kyiv",
       "endPoint": "Odessa",
@@ -11,7 +11,7 @@
     },
     {
       "id": "r2",
-      "passengerName": "Vova",
+      "name": "Vova",
       "date": "02.12.2022",
       "startPoint": "Lviv",
       "endPoint": "Lutsk",
@@ -20,12 +20,50 @@
     },
     {
       "id": "r3",
-      "passengerName": "Vasja",
+      "name": "Vasja",
       "date": "02.12.2022",
       "startPoint": "Mykolaiv",
       "endPoint": "Kyiv",
       "startTime": "08:00",
       "place": 1
+    }
+  ],
+  "offers": [
+    {
+      "id": "o1",
+      "name": "Mykola",
+      "date": "02.12.2022",
+      "startPoint": "Kyiv",
+      "endPoint": "Odessa",
+      "startTime": "07:00",
+      "userCar": "VolksWagen",
+      "userPhone": "067-111-22-33",
+      "place": 1,
+      "rate": 4
+    },
+    {
+      "id": "o2",
+      "name": "Vlad",
+      "date": "02.12.2022",
+      "startPoint": "Lviv",
+      "endPoint": "Lutsk",
+      "startTime": "06:00",
+      "userCar": "Audi",
+      "userPhone": "050-333-22-11",
+      "place": 2,
+      "rate": 5
+    },
+    {
+      "id": "o3",
+      "name": "Vasja",
+      "date": "02.12.2022",
+      "startPoint": "Mykolaiv",
+      "endPoint": "Kyiv",
+      "startTime": "06:30",
+      "userCar": "Ford",
+      "userPhone": "099-000-11-22",
+      "place": 1,
+      "rate": 5
     }
   ],
   "drivers": [

@@ -4,9 +4,9 @@ import TripCard from './TripCard/TripCard';
 
 const TripSearch = (props) => {
 
-  console.log(props);
+  // console.log(props);
   const trips = props.tripsRequest;
-  console.log(trips);
+  // const offers = props.tripsOffer;
 
   return (
 
@@ -16,12 +16,18 @@ const TripSearch = (props) => {
         {
           trips.map((elem, index) => {
 
-            console.log(elem);
             return (
               <TripCard trip={elem} key={index} />
             )
           })
         }
+        {/* {
+          offers.map((elem, index) => {
+            return (
+              <TripCard trip={elem} key={index} />
+            )
+          })
+        } */}
       </div>
     </div>
 

@@ -1,52 +1,55 @@
-.tripCard {
+.offerCard {
   width: 40vw;
-  height: 30vh;
+  height: 35vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  border-radius: 20px;
   background-color: #fff;
+  border-radius: 20px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
   margin: 25px auto;
   color: #1e1e1e;
   cursor: pointer;
   transition: all 0.2s;
 
-  &__dates {
+  &__user,
+  &__place {
     display: flex;
-    justify-content: space-around;
-    font-size: 18px;
+    justify-content: center;
+    font-size: 22px;
     line-height: 24px;
     font-weight: 700;
-    margin: 10px 0;
+    margin: 5px 0;
     color: blue;
   }
 
   &__route {
     width: 80%;
+    margin: 10px auto;
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
-    font-size: 26px;
-    line-height: 32px;
-    font-weight: 900;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 800;
     color: rgb(5, 62, 82);
     padding-bottom: 8px;
     border-bottom: 3px dashed green;
-    margin-bottom: 20px;
   }
 
-  &__person {
+  &__info {
     width: 80%;
+    margin: 10px auto;
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
     font-size: 18px;
-    line-height: 24px;
-    font-weight: 600;
+    line-height: 22px;
+    font-weight: 700;
   }
 
-  &:hover {
-    transform: scale(1.005);
+  &__rate {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 600;
+    margin-top: 15px;
   }
 }

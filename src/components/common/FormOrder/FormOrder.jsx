@@ -30,7 +30,7 @@ const FormOrder = () => {
     console.log(trip);
     dispatch(createTrip({ ...trip, id: { idmaker } }));
     setTrip({ startPoint: '', endPoint: '', name: '', place: '' });
-    return navigate('/tripsearch');
+    return navigate('tripsearch');
   }
 
   return (

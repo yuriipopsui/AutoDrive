@@ -3,8 +3,7 @@ import styles from './TripSearch.module.scss';
 import TripCard from './TripCard/TripCard';
 
 const TripSearch = (props) => {
-
-  // console.log(props);
+  console.log(props);
   const trips = props.tripsRequest;
   // const offers = props.tripsOffer;
 

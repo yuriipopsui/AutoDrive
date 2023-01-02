@@ -10,6 +10,7 @@ export const createTrip = createAction('CREATE_ROAD_REQUEST');
 
 export const passengerReducer = createReducer(initialState, {
   [createTrip]: function (state, action) {
+    console.log(state);
     return { ...state, requests: [...state.requests, action.payload] };
   }
 });

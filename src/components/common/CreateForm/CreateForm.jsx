@@ -5,13 +5,10 @@ import { offerTrip } from '../../../store/reducers/driversReducer';
 import styles from './CreateForm.module.scss';
 import { idmaker } from '../api/idmaker';
 
-// Createform for Create of trips. 
-
 const CreateForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
-  const [trip, setTrip] = useState({ startPoint: '', endPoint: '', date: '', time: '', place: '' });
+  const [trip, setTrip] = useState({ startPoint: '', endPoint: '', date: '', time: '', seats: '' });
 
   const onChangeHandler = (event) => {
     event.preventDefault();
@@ -20,15 +17,13 @@ const CreateForm = () => {
 
   const onSubmit = (data) => {
     data.preventDefault();
-    // console.log(trip);
     dispatch(offerTrip({ ...trip, id: idmaker }));
-    setTrip({ startPoint: '', endPoint: '', name: '', place: '' });
+    setTrip({ startPoint: '', endPoint: '', name: '', seats: '' });
     return navigate('/tripoffer');
   }
 
   return (
     <>
-
       <form className={styles.searchForm} action="" onSubmit={() => onSubmit(trip)}>
         <input className={styles.searchForm_input} type="text" id="fromWear" name="startPoint"
           placeholder="Звідки" value={trip.startPoint}
@@ -42,8 +37,8 @@ const CreateForm = () => {
         <input className={styles.searchForm_input} type="text" id="time" name="time"
           placeholder="Час" value={trip.name}
           onChange={onChangeHandler} />
-        <input className={styles.searchForm_input} type="text" id="userPlace" name="place"
-          placeholder="Місць" value={trip.place}
+        <input className={styles.searchForm_input} type="text" id="userPlace" name="seats"
+          placeholder="Місць" value={trip.seats}
           onChange={onChangeHandler} />
         <button className={styles.searchForm_button} onClick={onSubmit}>
           Поділитися поїздкою

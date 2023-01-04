@@ -1,11 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../common/Button/Button';
 import styles from './TripOffer.module.scss';
 import TripOfferCard from './TripOfferCard/TripOfferCard';
 
+
 const TripOffer = ({ tripsOffer }) => {
 
-  console.log(tripsOffer);
+  const [offerTrips, setOfferTrip] = useState(tripsOffer);
+
+  const offerData = (data) => {
+    return setOfferTrip(data);
+  }
+
+  const timeSortingEarlier = () => {
+    console.log('Working Up!');
+    const result = tripsOffer.slice().sort((x, y) =>
+      +x.time.split('').slice(0, 2).join('') - +y.time.split('').slice(0, 2).join('')
+    );
+    console.log(result);
+    return offerData(result);
+  }
+
+  const timeSortingLater = () => {
+    console.log('Working Down!');
+    const result = tripsOffer.slice().sort((x, y) =>
+      +y.time.split('').slice(0, 2).join('') - +x.time.split('').slice(0, 2).join('')
+    );
+    console.log(result);
+    return offerData(result);
+  }
 
   return <div className={styles.tripOffer}>
 
@@ -13,21 +36,18 @@ const TripOffer = ({ tripsOffer }) => {
       <Button buttonTitle="Show All" buttonColor="#fff" />
       <h3 className={styles.tripOffer__manage_title}>Сортувати за</h3>
       <div className={styles.tripOffer__manage_filter}>
-        <Button buttonTitle="Найраньші" buttonColor="#fff" />
-        <Button buttonTitle="Найдешевші" buttonColor="#fff" />
+        <Button buttonTitle="Раніші" buttonColor="#fff" onClick={timeSortingEarlier} />
+        <Button buttonTitle="Піздніші" buttonColor="#fff" onClick={timeSortingLater} />
       </div>
     </div>
 
     <div className={styles.tripOffer__container}>
-      {tripsOffer.map((elem, index) => {
-
-        console.log(elem.place);
+      {offerTrips.map((elem, index) => {
         return (
           <TripOfferCard trip={elem} key={index} />
         );
       })}
     </div>
-
   </div>;
 
 }

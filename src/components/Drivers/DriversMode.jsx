@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './DriversMode.module.scss';
 import CreateForm from '../common/CreateForm/CreateForm';
 
-const DriversMode = ({ tripOffer }) => {
+const DriversMode = () => {
 
   return (
     <div className={styles.drivers}>

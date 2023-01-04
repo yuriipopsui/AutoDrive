@@ -18,7 +18,7 @@ const FormOrder = () => {
   //   return navigate('/tripsearch')
   // }
 
-  const [trip, setTrip] = useState({ startPoint: '', endPoint: '', name: '', place: '' });
+  const [trip, setTrip] = useState({ startPoint: '', endPoint: '', name: '', seats: '' });
 
   const onChangeHandler = (event) => {
     event.preventDefault();
@@ -29,7 +29,7 @@ const FormOrder = () => {
     data.preventDefault();
     console.log(trip);
     dispatch(createTrip({ ...trip, id: { idmaker } }));
-    setTrip({ startPoint: '', endPoint: '', name: '', place: '' });
+    setTrip({ startPoint: '', endPoint: '', name: '', seats: '' });
     return navigate('tripsearch');
   }
 
@@ -57,8 +57,8 @@ const FormOrder = () => {
         </div>
         <div className={styles.formOrder_input}>
           <label htmlFor="userPlace">Кількість місць</label>
-          <input type="text" id="userPlace" name="place"
-            placeholder="кількість місць" value={trip.place}
+          <input type="text" id="userPlace" name="seats"
+            placeholder="кількість місць" value={trip.seats}
             onChange={onChangeHandler} />
         </div>
 

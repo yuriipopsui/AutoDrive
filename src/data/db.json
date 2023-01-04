@@ -38,7 +38,7 @@
       "startTime": "07:00",
       "userCar": "VolksWagen",
       "userPhone": "067-111-22-33",
-      "place": 1,
+      "seats": 1,
       "rate": 4
     },
     {
@@ -50,7 +50,7 @@
       "startTime": "06:00",
       "userCar": "Audi",
       "userPhone": "050-333-22-11",
-      "place": 2,
+      "seats": 2,
       "rate": 5
     },
     {
@@ -62,7 +62,7 @@
       "startTime": "06:30",
       "userCar": "Ford",
       "userPhone": "099-000-11-22",
-      "place": 1,
+      "seats": 1,
       "rate": 5
     }
   ],

@@ -1,12 +1,11 @@
 import React from 'react';
 import styles from './TripOfferCard.module.scss';
 
-const TripOfferCard = ({ trip: { startPoint, endPoint, name, place, userCar, userPhone, rate = 5 } }) => {
-
-  let endWord = (place) => {
+const TripOfferCard = ({ trip, trip: { startPoint, endPoint, seats, date, time, rate = 5 } }) => {
+  let endWord = (seats) => {
     let lastLetter = null;
-    let lastNumber = place.toString().split('').slice(-1);
-    if (place > 10 && place < 20) {
+    let lastNumber = seats.toString().split('').slice(-1);
+    if (seats > 10 && seats < 20) {
       lastLetter = 'ь';
       return lastLetter;
     }
@@ -24,21 +23,17 @@ const TripOfferCard = ({ trip: { startPoint, endPoint, name, place, userCar, use
 
   return (
     <div className={styles.offerCard}>
-      {/* <h2 className={styles.offerCard__title}>
-        This is Offer Card
-      </h2> */}
-
+      {!trip && <h2>There are no offers on your route!</h2>}
       <div className={styles.offerCard__route}>
         <div className={styles.offerCard__route_point}>{startPoint}</div>
         <div className={styles.offerCard__route_point}>{endPoint}</div>
       </div>
-      <div className={styles.offerCard__user}>{name}</div>
-      {/* <div className={styles.offerCard__info}>
-        <div className={styles.offerCard__route_car}>{userCar}</div>
-        <div className={styles.offerCard__route_phone}>{`тел.: ${userPhone}`}</div>
-      </div> */}
-      <div className={styles.offerCard__place}>
-        {`Я маю ${place} місц${endWord(place)}`}
+      <div className={styles.offerCard__info}>
+        <div className={styles.offerCard__route_car}>{date}</div>
+        <div className={styles.offerCard__route_phone}>{time}</div>
+      </div>
+      <div className={styles.offerCard__seats}>
+        {`Я маю ${seats} місц${endWord(seats)}`}
       </div>
       <div className={styles.offerCard__rate}>
         {`Рейтінг водія: ${rate}`}

@@ -1,5 +1,5 @@
 
 export const tripSearchSelector = (state) => {
-  console.log(state);
+  // console.log(state);
   return state.requestTrip.requests;
 }

@@ -1,22 +1,24 @@
 import React from 'react';
 import styles from './TripCard.module.scss';
 
-const TripCard = ({ trip: { name, date, startPoint, endPoint, startTime, place } }) => {
+const TripCard = ({ trip, trip: { date, startPoint, endPoint, startTime, seats } }) => {
 
-  let endWord = (place) => {
-    let lastLetter = null;
-    let lastNumber = place.toString().split('').slice(-1);
-    if (+lastNumber === 1) {
-      lastLetter = 'е';
-    }
-    else if (+lastNumber > 4) {
-      lastLetter = 'ь';
-    }
-    else {
-      lastLetter = 'я';
-    }
-    return lastLetter;
-  }
+  // console.log(trip);
+
+  // let endWord = (seats) => {
+  //   let lastLetter = null;
+  //   let lastNumber = seats.toString().split('').slice(-1);
+  //   if (+lastNumber === 1) {
+  //     lastLetter = 'е';
+  //   }
+  //   else if (+lastNumber > 4) {
+  //     lastLetter = 'ь';
+  //   }
+  //   else {
+  //     lastLetter = 'я';
+  //   }
+  //   return lastLetter;
+  // }
 
   return (
     <div className={styles.tripCard}>
@@ -33,9 +35,9 @@ const TripCard = ({ trip: { name, date, startPoint, endPoint, startTime, place }
         <div className={styles.tripCard__route_point}>{endPoint}</div>
       </div>
       <div className={styles.tripCard__person}>
-        <div className={styles.tripCard__passenger}>{name}</div>
+        {/* <div className={styles.tripCard__passenger}>{name}</div> */}
         <div className={styles.tripCard__place}>
-          {`Потрібно ${place} місц${endWord(place)}`}
+          {/* {`Потрібно ${seats} місц${endWord(seats)}`} */}
         </div>
       </div>
     </div>

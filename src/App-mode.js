@@ -3,7 +3,7 @@ import { Routes, Route, Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Header from './components/Header/Header';
 import HomeMode from './components/Home/HomeMode';
-import Passengers from './components/Passengers/Passengers';
+import PassengersMode from './components/Passengers/PassengersMode';
 import TripSearch from './components/TripSearch/TripSearch';
 import { tripSearchSelector } from './store/selectors/tripSearchSelector';
 import { tripOfferSelector } from './store/selectors/tripOfferSelector';
@@ -27,7 +27,7 @@ const AppMode = (props) => {
           <Routes>
             <Route path="/" index element={<HomeMode store={props.store} />} />
             <Route path="passengers">
-              <Route path="" element={< Passengers store={props.store} />} />
+              <Route path="" element={< PassengersMode tripsOffer={tripsOffer} />} />
               <Route path="tripsearch" element={< TripSearch tripsRequest={tripsRequest} />} />
             </Route>
             <Route path="tripsearch" element={< TripSearch tripsRequest={tripsRequest} />} />

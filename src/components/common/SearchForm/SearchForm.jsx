@@ -10,9 +10,8 @@ import { idmaker } from '../api/idmaker';
 const SearchForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  // const idmaker = (Date.now().toString().split('').slice(-5).join(''));
 
-  const [trip, setTrip] = useState({ startPoint: '', endPoint: '', name: '', place: '' });
+  const [trip, setTrip] = useState({ startPoint: '', endPoint: '', name: '', seats: '' });
 
   const onChangeHandler = (event) => {
     event.preventDefault();
@@ -23,7 +22,7 @@ const SearchForm = () => {
     data.preventDefault();
     // console.log(trip);
     dispatch(createTrip({ ...trip, id: idmaker }));
-    setTrip({ startPoint: '', endPoint: '', name: '', place: '' });
+    setTrip({ startPoint: '', endPoint: '', name: '', seats: '' });
     return navigate('tripsearch');
   }
 
@@ -37,14 +36,14 @@ const SearchForm = () => {
         <input className={styles.searchForm_input} type="text" id="wear" name="endPoint"
           placeholder="Куди" value={trip.endPoint}
           onChange={onChangeHandler} />
-        <input className={styles.searchForm_input} type="text" id="userName" name="name"
-          placeholder="Коли" value={trip.name}
+        <input className={styles.searchForm_input} type="text" id="userName" name="date"
+          placeholder="Коли" value={trip.date}
           onChange={onChangeHandler} />
-        <input className={styles.searchForm_input} type="text" id="userPlace" name="place"
-          placeholder="Місць" value={trip.place}
+        <input className={styles.searchForm_input} type="text" id="userPlace" name="seats"
+          placeholder="Місць" value={trip.seats}
           onChange={onChangeHandler} />
         <button className={styles.searchForm_button} onClick={onSubmit}>
-          Відправити заявку
+          Знайти
         </button>
       </form>
     </>

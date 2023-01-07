@@ -9,12 +9,14 @@ import { tripSearchSelector } from './store/selectors/tripSearchSelector';
 import { tripOfferSelector } from './store/selectors/tripOfferSelector';
 import DriversMode from './components/Drivers/DriversMode';
 import TripOffer from './components/TripOffer/TripOffer';
+import { findTripSelector } from './store/selectors/findTripSelector';
 
 
 const AppMode = (props) => {
 
   const tripsRequest = useSelector(tripSearchSelector);
   const tripsOffer = useSelector(tripOfferSelector);
+  const findTripObject = useSelector(findTripSelector);
 
   return (
     <div className={styles.App}>
@@ -22,17 +24,16 @@ const AppMode = (props) => {
 
       <div className={styles.main} >
         <div className={styles.main__content}>
-          <h1>This is a modified App Page</h1>
 
           <Routes>
-            <Route path="/" index element={<HomeMode store={props.store} />} />
+            <Route path="/" index element={<HomeMode />} />
             <Route path="passengers">
               <Route path="" element={< PassengersMode tripsOffer={tripsOffer} />} />
               <Route path="tripsearch" element={< TripSearch tripsRequest={tripsRequest} />} />
             </Route>
             <Route path="tripsearch" element={< TripSearch tripsRequest={tripsRequest} />} />
             <Route path="drivers" element={<DriversMode tripsOffer={tripsOffer} />} />
-            <Route path="tripoffer" element={<TripOffer tripsOffer={tripsOffer} />} />
+            <Route path="tripoffer" element={<TripOffer tripsOffer={tripsOffer} find={findTripObject} />} />
 
           </Routes>
 

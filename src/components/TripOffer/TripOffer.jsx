@@ -1,55 +1,63 @@
-import React, { useState } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import Button from '../common/Button/Button';
 import styles from './TripOffer.module.scss';
 import TripOfferCard from './TripOfferCard/TripOfferCard';
 
 
-const TripOffer = ({ tripsOffer }) => {
+const TripOffer = ({ tripsOffer, find }) => {
 
-  const [offerTrips, setOfferTrip] = useState(tripsOffer);
+  const [offerTrips, setOfferTrips] = useState(tripsOffer);
 
-  const offerData = (data) => {
-    return setOfferTrip(data);
-  }
+  useLayoutEffect(() => {
+    let start = tripsOffer.filter(trip => {
+      return trip.startPoint === find.startPoint;
+    })
+    let filtered = start.filter(trip => {
+      return trip.endPoint === find.endPoint;
+    })
+    console.log(filtered);
+    setOfferTrips(filtered);
+  }, [tripsOffer, find.startPoint, find.endPoint])
+
+  // console.log(offerTrips)
+  // console.log(find);
 
   const timeSortingEarlier = () => {
-    console.log('Working Up!');
-    const result = tripsOffer.slice().sort((x, y) =>
+    const result = offerTrips.slice().sort((x, y) =>
       +x.time.split('').slice(0, 2).join('') - +y.time.split('').slice(0, 2).join('')
     );
-    console.log(result);
-    return offerData(result);
+    setOfferTrips(result);
   }
 
   const timeSortingLater = () => {
-    console.log('Working Down!');
-    const result = tripsOffer.slice().sort((x, y) =>
+    const result = offerTrips.slice().sort((x, y) =>
       +y.time.split('').slice(0, 2).join('') - +x.time.split('').slice(0, 2).join('')
     );
-    console.log(result);
-    return offerData(result);
+    setOfferTrips(result);
   }
 
   return <div className={styles.tripOffer}>
 
     <div className={styles.tripOffer__manage}>
-      <Button buttonTitle="Show All" buttonColor="#fff" />
       <h3 className={styles.tripOffer__manage_title}>Сортувати за</h3>
       <div className={styles.tripOffer__manage_filter}>
-        <Button buttonTitle="Раніші" buttonColor="#fff" onClick={timeSortingEarlier} />
+        <Button className={offerTrips.length === 0 ? styles.tripOffer__manage_button : ''} buttonTitle="Раніші" buttonColor="#fff" onClick={timeSortingEarlier} />
         <Button buttonTitle="Піздніші" buttonColor="#fff" onClick={timeSortingLater} />
       </div>
     </div>
 
-    <div className={styles.tripOffer__container}>
-      {offerTrips.map((elem, index) => {
-        return (
-          <TripOfferCard trip={elem} key={index} />
-        );
-      })}
+    <div className={styles.tripOffer__content}>
+      {
+        offerTrips.length === 0
+          ?
+          <h2>Вибачте, але за Вашим маршрутом поїздок не знайдено!</h2>
+          :
+          offerTrips.map((elem, index) => {
+            return (
+              <TripOfferCard trip={elem} key={index} />
+            );
+          })}
     </div>
   </div>;
-
 }
-
 export default TripOffer;

@@ -28,9 +28,15 @@
         box-shadow: 5px 0 5px #c4c4c4;
       }
     }
+
+    &_button:disabled {
+      color: #c4c4c4;
+    }
   }
 
   &__content {
     grid-column: content;
+    color: #c4c4c4;
+    margin: auto;
   }
 }

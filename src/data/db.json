@@ -30,40 +30,92 @@
   ],
   "offers": [
     {
-      "id": "o1",
-      "name": "Mykola",
-      "date": "02.12.2022",
+      "id": "7a13a",
+      "startPoint": "Riga",
+      "endPoint": "Tallinn",
+      "date": "20.01.2023",
+      "time": "06:00",
+      "seats": "2"
+    },
+    {
+      "id": "7a13b",
+      "startPoint": "Lutck",
+      "endPoint": "Lviv",
+      "date": "12.01.2023",
+      "time": "07:00",
+      "seats": "2"
+    },
+    {
+      "id": "7a13c",
       "startPoint": "Kyiv",
-      "endPoint": "Odessa",
-      "startTime": "07:00",
-      "userCar": "VolksWagen",
-      "userPhone": "067-111-22-33",
-      "seats": 1,
-      "rate": 4
+      "endPoint": "Brody",
+      "date": "30.01.2023",
+      "time": "08:00",
+      "seats": "2"
     },
     {
-      "id": "o2",
-      "name": "Vlad",
-      "date": "02.12.2022",
+      "id": "mfxwt",
+      "startPoint": "Kyiv",
+      "endPoint": "Lviv",
+      "date": "02.02.2023",
+      "time": "06:00",
+      "seats": "4"
+    },
+    {
+      "id": "tnn89",
+      "startPoint": "Kyiv",
+      "endPoint": "Riga",
+      "date": "15.02.2023",
+      "time": "10:00",
+      "seats": "3"
+    },
+    {
+      "id": "tnm89",
+      "startPoint": "Kyiv",
+      "endPoint": "Lviv",
+      "date": "15.01.2023",
+      "time": "09:00",
+      "seats": "2"
+    },
+    {
+      "id": "zxsp3",
+      "startPoint": "Kyiv",
+      "endPoint": "Riga",
+      "date": "20.02.2023",
+      "time": "09:00",
+      "seats": "3"
+    },
+    {
+      "id": "yxsp3",
+      "startPoint": "Kyiv",
+      "endPoint": "Lviv",
+      "date": "15.02.2023",
+      "time": "16:00",
+      "seats": "4"
+    },
+    {
+      "id": "uspx3",
+      "startPoint": "Riga",
+      "endPoint": "Tallinn",
+      "date": "20.02.2023",
+      "time": "11:00",
+      "seats": "2"
+    },
+    {
+      "id": "wjauj",
+      "startPoint": "Kyiv",
+      "endPoint": "Lviv",
+      "date": "15.01.2023",
+      "time": "06:00",
+      "seats": "2"
+    },
+    {
+      "id": "yo51o",
       "startPoint": "Lviv",
-      "endPoint": "Lutsk",
-      "startTime": "06:00",
-      "userCar": "Audi",
-      "userPhone": "050-333-22-11",
-      "seats": 2,
-      "rate": 5
-    },
-    {
-      "id": "o3",
-      "name": "Vasja",
-      "date": "02.12.2022",
-      "startPoint": "Mykolaiv",
-      "endPoint": "Kyiv",
-      "startTime": "06:30",
-      "userCar": "Ford",
-      "userPhone": "099-000-11-22",
-      "seats": 1,
-      "rate": 5
+      "endPoint": "Riga",
+      "date": "15.01.2023",
+      "time": "12:00",
+      "seats": "3"
     }
   ],
   "drivers": [

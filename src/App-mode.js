@@ -31,9 +31,14 @@ const AppMode = (props) => {
               <Route path="" element={< PassengersMode tripsOffer={tripsOffer} />} />
               <Route path="tripsearch" element={< TripSearch tripsRequest={tripsRequest} />} />
             </Route>
-            <Route path="tripsearch" element={< TripSearch tripsRequest={tripsRequest} />} />
-            <Route path="drivers" element={<DriversMode tripsOffer={tripsOffer} />} />
+            <Route path="drivers">
+              <Route path="" element={<DriversMode tripsOffer={tripsOffer} />} />
+              <Route path="all-trips" element={<TripOffer tripsOffer={tripsOffer} />} />
+            </Route>
+
+            {/* <Route path="drivers" element={<DriversMode tripsOffer={tripsOffer} />} /> */}
             <Route path="tripoffer" element={<TripOffer tripsOffer={tripsOffer} find={findTripObject} />} />
+            {/* <Route path="tripsearch" element={< TripSearch tripsRequest={tripsRequest} />} /> */}
 
           </Routes>
 

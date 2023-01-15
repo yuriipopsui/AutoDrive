@@ -2,48 +2,90 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { offerTrip } from '../../../store/reducers/driversReducer';
+import { useForm } from 'react-hook-form';
+import * as Yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 import styles from './CreateForm.module.scss';
 import { idmaker } from '../api/idmaker';
+
+const schema = Yup.object().shape({
+  startPoint: Yup.string().required("Вкажіть початок маршруту").min(3, "Назва початкової точки занадто коротка"),
+  endPoint: Yup.string().required("Вкажіть кінець маршруту").min(3, "Назва кінцевої точки занадто коротка"),
+
+});
 
 const CreateForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [trip, setTrip] = useState({ startPoint: '', endPoint: '', date: '', time: '', seats: '' });
+  const [trip, setTrip] = useState({
+    startPoint: '',
+    endPoint: '',
+    date: new Date().toISOString().slice(0, 10),
+    time: new Date().toISOString().slice(11, 16),
+    seats: 1
+  });
+  const { register, handleSubmit, formState: { errors }, clearErrors } = useForm({
+    resolver: yupResolver(schema)
+  })
+
+  // console.log(new Date().toISOString().slice(11, 16));
 
   const onChangeHandler = (event) => {
     event.preventDefault();
+    clearErrors(event.target.name);
     setTrip({ ...trip, [event.target.name]: event.target.value });
   }
 
-  const onSubmit = (data) => {
-    data.preventDefault();
+  const onSubmit = () => {
+    console.log(trip);
     dispatch(offerTrip({ ...trip, id: idmaker }));
-    setTrip({ startPoint: '', endPoint: '', name: '', seats: '' });
+    setTrip({
+      startPoint: '',
+      endPoint: '',
+      date: new Date().toISOString().slice(0, 10),
+      time: new Date().toISOString().slice(11, 16),
+      seats: 1
+    });
     return navigate('/tripoffer');
   }
 
   return (
     <>
-      <form className={styles.searchForm} action="" onSubmit={() => onSubmit(trip)}>
-        <input className={styles.searchForm_input} type="text" id="fromWear" name="startPoint"
+      <form className={styles.createForm} action="" onSubmit={handleSubmit(onSubmit)}>
+        <input className={`${styles.createForm__input} ${errors.startPoint ? styles.createForm__error : ''}`} {...register("startPoint")} type="text" id="tripFrom" name="startPoint"
           placeholder="Звідки" value={trip.startPoint}
           onChange={onChangeHandler} />
-        <input className={styles.searchForm_input} type="text" id="wear" name="endPoint"
+
+        <input className={`${styles.createForm__input} ${errors.startPoint ? styles.createForm__error : ''}`} {...register("endPoint")} type="text" id="tripTo" name="endPoint"
           placeholder="Куди" value={trip.endPoint}
           onChange={onChangeHandler} />
-        <input className={styles.searchForm_input} type="text" id="when" name="date"
-          placeholder="Коли" value={trip.name}
+
+        <input className={`${styles.createForm__input} ${styles.createForm__input_special}`} {...register("date")} type="date" id="when" name="date"
+          placeholder="Коли" value={trip.date}
           onChange={onChangeHandler} />
-        <input className={styles.searchForm_input} type="text" id="time" name="time"
-          placeholder="Час" value={trip.name}
+
+        <input className={`${styles.createForm__input} ${styles.createForm__input_special}`} {...register("time")} type="time" id="time" name="time"
+          placeholder="Час" value={trip.time}
           onChange={onChangeHandler} />
-        <input className={styles.searchForm_input} type="text" id="userPlace" name="seats"
-          placeholder="Місць" value={trip.seats}
+
+
+        <input className={`${styles.createForm__input} ${styles.createForm__input_special} ${styles.createForm__input_number}`}
+          {...register("seats")}
+          type="number" id="userPlace" name="seats"
+          placeholder="Місць" value={trip.seats} min="1" max="8"
           onChange={onChangeHandler} />
-        <button className={styles.searchForm_button} onClick={onSubmit}>
+        <button className={styles.createForm__button}>
           Поділитися поїздкою
         </button>
       </form>
+
+      {/* Logging of Errors in Form */}
+
+      <div className={styles.createForm__errors}>
+        {Object.entries(errors).map((e, i) => {
+          return <p key={i}>{e[1].message}</p>
+        })}
+      </div>
     </>
   )
 }

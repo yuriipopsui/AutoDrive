@@ -1,15 +1,15 @@
-.searchForm {
+.createForm {
   width: 95%;
   display: flex;
   justify-content: center;
   margin: 0 auto;
   align-items: center;
 
-  &_input {
+  &__input {
     display: flex;
     width: 88%;
     font-size: 18px;
-    line-height: 32px;
+    line-height: 33px;
     margin: 30px 0;
     padding: 20px 10px;
     border: none;
@@ -18,9 +18,42 @@
     &:nth-child(1) {
       border-radius: 7px 0 0 7px;
     }
+
+    &::placeholder {
+      color: #c4c4c4;
+    }
+
+    &_special {
+      font-family: apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+      font-weight: 400;
+      color: #c4c4c4;
+      font-size: 18px;
+      line-height: 31px;
+    }
+
+    &_number {
+      font-size: 19px;
+      line-height: 33px;
+    }
   }
 
-  &_button {
+  &__error {
+    outline: 2px solid red;
+  }
+
+  &__errors {
+    & p {
+      font-size: 16px;
+      font-weight: 500;
+      font-style: italic;
+      color: rgb(144, 3, 127);
+      text-align: left;
+      margin-left: 30px;
+      // margin-top: -15px;
+    }
+  }
+
+  &__button {
     margin: 30px auto;
     padding: 15px 25px;
     font-size: 18px;

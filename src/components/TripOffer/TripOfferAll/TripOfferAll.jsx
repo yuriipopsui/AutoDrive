@@ -1,23 +1,12 @@
-import React, { useState, useLayoutEffect } from 'react';
-import Button from '../common/Button/Button';
-import styles from './TripOffer.module.scss';
-import TripOfferCard from './TripOfferCard/TripOfferCard';
+import React, { useState } from 'react';
+import Button from '../../common/Button/Button';
+import styles from './TripOfferAll.module.scss';
+import TripOfferCard from '../TripOfferCard/TripOfferCard';
 
-
-const TripOffer = ({ tripsOffer, find }) => {
+// TripOfferAll just render All Triips from data base ( This page is more for the developer, almost service Page )
+const TripOfferAll = ({ tripsOffer }) => {
 
   const [offerTrips, setOfferTrips] = useState(tripsOffer);
-
-  useLayoutEffect(() => {
-    let start = tripsOffer.filter(trip => {
-      return trip.startPoint === find.startPoint;
-    })
-    let filtered = start.filter(trip => {
-      return trip.endPoint === find.endPoint;
-    })
-    console.log(filtered);
-    setOfferTrips(filtered);
-  }, [tripsOffer, find.startPoint, find.endPoint])
 
   // console.log(offerTrips)
   // console.log(find);
@@ -50,7 +39,7 @@ const TripOffer = ({ tripsOffer, find }) => {
       {
         offerTrips.length === 0
           ?
-          <h2>Вибачте, але за Вашим маршрутом поїздок не знайдено!</h2>
+          <h2>Вибачте, але нічого не знайдено!</h2>
           :
           offerTrips.map((elem, index) => {
             return (
@@ -60,4 +49,4 @@ const TripOffer = ({ tripsOffer, find }) => {
     </div>
   </div>;
 }
-export default TripOffer;
+export default TripOfferAll;

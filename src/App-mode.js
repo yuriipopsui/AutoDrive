@@ -10,6 +10,7 @@ import { tripOfferSelector } from './store/selectors/tripOfferSelector';
 import DriversMode from './components/Drivers/DriversMode';
 import TripOffer from './components/TripOffer/TripOffer';
 import { findTripSelector } from './store/selectors/findTripSelector';
+import TripOfferAll from './components/TripOffer/TripOfferAll/TripOfferAll';
 
 
 const AppMode = (props) => {
@@ -33,7 +34,7 @@ const AppMode = (props) => {
             </Route>
             <Route path="drivers">
               <Route path="" element={<DriversMode tripsOffer={tripsOffer} />} />
-              <Route path="all-trips" element={<TripOffer tripsOffer={tripsOffer} />} />
+              <Route path="all_trips" element={<TripOfferAll tripsOffer={tripsOffer} />} />
             </Route>
 
             {/* <Route path="drivers" element={<DriversMode tripsOffer={tripsOffer} />} /> */}

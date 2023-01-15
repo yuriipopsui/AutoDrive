@@ -46,7 +46,7 @@ const CreateForm = () => {
       time: new Date().toISOString().slice(11, 16),
       seats: 1
     });
-    return navigate('/tripoffer');
+    return navigate('all_trips');
   }
 
   return (

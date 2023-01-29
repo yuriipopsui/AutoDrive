@@ -1,11 +1,12 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-// import { driversReducer } from './reducers/driversReducer';
+import { driverReducer } from './reducers/driversReducer';
 // import { authReducer } from './reducers/authReducer';
-import { requestTripReducer } from './reducers/requestTripReducer';
+import { passengerReducer } from './reducers/createTripReducer';
 
 
 const rootReducer = combineReducers({
-  requestTrip: requestTripReducer
+  requestTrip: passengerReducer,
+  offerTrip: driverReducer
 });
 
 
@@ -14,4 +15,5 @@ const store = configureStore({
   reducer: rootReducer
 });
 
+console.log(store.getState());
 export default store;

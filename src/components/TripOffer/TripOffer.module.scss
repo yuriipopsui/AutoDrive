@@ -1,0 +1,42 @@
+.tripOffer {
+  width: 95vw;
+  display: grid;
+  grid-template-columns: [manage] 1fr [content] 2fr;
+
+  &__manage {
+    grid-column: manage;
+    padding: 30px 0;
+    // position: fixed;
+
+    & button {
+      box-shadow: 5px 0 5px #c4c4c4;
+    }
+
+    &_title {
+      margin: 25px 0;
+      font-size: 28px;
+      line-height: 32px;
+      color: rgb(5, 62, 82);
+    }
+
+    &_filter {
+      display: flex;
+      flex-direction: column;
+
+      & button {
+        margin-bottom: 20px;
+        box-shadow: 5px 0 5px #c4c4c4;
+      }
+    }
+
+    &_button:disabled {
+      color: #c4c4c4;
+    }
+  }
+
+  &__content {
+    grid-column: content;
+    color: #c4c4c4;
+    margin: auto;
+  }
+}

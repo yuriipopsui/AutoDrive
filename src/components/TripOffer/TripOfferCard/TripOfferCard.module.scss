@@ -1,0 +1,64 @@
+.offerCard {
+  width: 40vw;
+  height: 35vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 20px;
+  // box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  box-shadow: 14px 0 18px #c4c4c4;
+  margin: 25px auto;
+  color: #1e1e1e;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    box-shadow: 5px 3px 7px #1e1e1e;
+  }
+
+  &:active {
+    transform: scale(0.99);
+  }
+
+  &__user,
+  &__place {
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    line-height: 24px;
+    font-weight: 700;
+    margin: 5px 0;
+    color: blue;
+  }
+
+  &__route {
+    width: 80%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 800;
+    color: rgb(5, 62, 82);
+    padding-bottom: 8px;
+    border-bottom: 3px dashed green;
+  }
+
+  &__info {
+    width: 80%;
+    margin: 15px auto;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 700;
+  }
+
+  &__rate {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 600;
+    margin-top: 15px;
+  }
+}

@@ -14,11 +14,15 @@ import Sidebar from './components/Sidebar/Sidebar';
 import CreateTripDriver from './components/Drivers/CreateTripDriver/CreateTripDriver';
 import MyTripsDriver from './components/Drivers/MyTripsDriver/MyTripsDriver';
 import { tripSearchSelector } from './store/selectors/tripSearchSelector';
+import { tripOfferSelector } from './store/selectors/tripOfferSelector';
+import TripOffer from './components/TripOffer/TripOffer';
 
 function App(props) {
 
   console.log(useSelector(tripSearchSelector));
+  console.log(useSelector(tripOfferSelector));
   const tripsRequest = useSelector(tripSearchSelector);
+  const tripsOffer = useSelector(tripOfferSelector);
 
 
   return (
@@ -33,8 +37,11 @@ function App(props) {
           <Routes>
             <Route path="/" index element={<Home store={props.store} />} />
             <Route path="drivers" element={< Drivers store={props.store} />} />
+
             <Route path="passengers" element={< Passengers store={props.store} />} />
-            <Route path="tripsearch" element={< TripSearch tripsRequest={tripsRequest} />} />
+            <Route path="tripsearch" element={< TripSearch tripsRequest={tripsRequest} tripsOffer={tripsOffer} />} />
+            <Route path="tripoffer" element={< TripOffer tripsOffer={tripsOffer} />} />
+
             <Route path="login" element={< Login store={props.store} />} />
             <Route path="passengers/create_trip" element={< CreateTrip store={props.store} />} />
             <Route path="passengers/my_trips" element={< MyTrips store={props.store} />} />

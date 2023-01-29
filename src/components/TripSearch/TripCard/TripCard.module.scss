@@ -7,6 +7,46 @@
   border-radius: 20px;
   background-color: #fff;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-
   margin: 25px auto;
+  color: #1e1e1e;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &__dates {
+    display: flex;
+    justify-content: space-around;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    margin: 10px 0;
+    color: blue;
+  }
+
+  &__route {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 900;
+    color: rgb(5, 62, 82);
+    padding-bottom: 8px;
+    border-bottom: 3px dashed green;
+    margin-bottom: 20px;
+  }
+
+  &__person {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+  }
+
+  &:hover {
+    transform: scale(1.005);
+  }
 }

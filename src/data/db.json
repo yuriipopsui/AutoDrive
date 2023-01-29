@@ -2,7 +2,7 @@
   "requests": [
     {
       "id": "r1",
-      "passengerName": "Klava",
+      "name": "Klava",
       "date": "02.12.2022",
       "startPoint": "Kyiv",
       "endPoint": "Odessa",
@@ -11,7 +11,7 @@
     },
     {
       "id": "r2",
-      "passengerName": "Vova",
+      "name": "Vova",
       "date": "02.12.2022",
       "startPoint": "Lviv",
       "endPoint": "Lutsk",
@@ -20,12 +20,102 @@
     },
     {
       "id": "r3",
-      "passengerName": "Vasja",
+      "name": "Vasja",
       "date": "02.12.2022",
       "startPoint": "Mykolaiv",
       "endPoint": "Kyiv",
       "startTime": "08:00",
       "place": 1
+    }
+  ],
+  "offers": [
+    {
+      "id": "7a13a",
+      "startPoint": "Riga",
+      "endPoint": "Tallinn",
+      "date": "20.01.2023",
+      "time": "06:00",
+      "seats": "2"
+    },
+    {
+      "id": "7a13b",
+      "startPoint": "Lutck",
+      "endPoint": "Lviv",
+      "date": "12.01.2023",
+      "time": "07:00",
+      "seats": "2"
+    },
+    {
+      "id": "7a13c",
+      "startPoint": "Kyiv",
+      "endPoint": "Brody",
+      "date": "30.01.2023",
+      "time": "08:00",
+      "seats": "2"
+    },
+    {
+      "id": "mfxwt",
+      "startPoint": "Kyiv",
+      "endPoint": "Lviv",
+      "date": "02.02.2023",
+      "time": "06:00",
+      "seats": "4"
+    },
+    {
+      "id": "tnn89",
+      "startPoint": "Kyiv",
+      "endPoint": "Riga",
+      "date": "15.02.2023",
+      "time": "10:00",
+      "seats": "3"
+    },
+    {
+      "id": "tnm89",
+      "startPoint": "Kyiv",
+      "endPoint": "Lviv",
+      "date": "15.01.2023",
+      "time": "09:00",
+      "seats": "2"
+    },
+    {
+      "id": "zxsp3",
+      "startPoint": "Kyiv",
+      "endPoint": "Riga",
+      "date": "20.02.2023",
+      "time": "09:00",
+      "seats": "3"
+    },
+    {
+      "id": "yxsp3",
+      "startPoint": "Kyiv",
+      "endPoint": "Lviv",
+      "date": "15.02.2023",
+      "time": "16:00",
+      "seats": "4"
+    },
+    {
+      "id": "uspx3",
+      "startPoint": "Riga",
+      "endPoint": "Tallinn",
+      "date": "20.02.2023",
+      "time": "11:00",
+      "seats": "2"
+    },
+    {
+      "id": "wjauj",
+      "startPoint": "Kyiv",
+      "endPoint": "Lviv",
+      "date": "15.01.2023",
+      "time": "06:00",
+      "seats": "2"
+    },
+    {
+      "id": "yo51o",
+      "startPoint": "Lviv",
+      "endPoint": "Riga",
+      "date": "15.01.2023",
+      "time": "12:00",
+      "seats": "3"
     }
   ],
   "drivers": [

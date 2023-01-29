@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { offerTrip } from '../../../store/reducers/driversReducer';
 import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import styles from './CreateForm.module.scss';
-import { idmaker } from '../api/idmaker';
+import { createTripOperation } from '../../../store/reducers/driversReducer';
 
 const schema = Yup.object().shape({
   startPoint: Yup.string().required("Вкажіть початок маршруту").min(3, "Назва початкової точки занадто коротка"),
@@ -28,8 +27,6 @@ const CreateForm = () => {
     resolver: yupResolver(schema)
   })
 
-  // console.log(new Date().toISOString().slice(11, 16));
-
   const onChangeHandler = (event) => {
     event.preventDefault();
     clearErrors(event.target.name);
@@ -37,8 +34,7 @@ const CreateForm = () => {
   }
 
   const onSubmit = () => {
-    console.log(trip);
-    dispatch(offerTrip({ ...trip, id: idmaker }));
+    dispatch(createTripOperation({ ...trip }));
     setTrip({
       startPoint: '',
       endPoint: '',

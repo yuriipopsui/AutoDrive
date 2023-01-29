@@ -24,7 +24,9 @@ const SearchFormMode = () => {
     resolver: yupResolver(schema),
   });
 
-  const [findObject, setFindObject] = useState({ startPoint: '', endPoint: '', date: new Date().toISOString().slice(0, 10), seats: 1 });
+  const [findObject, setFindObject] = useState({
+    date: new Date().toISOString().slice(0, 10), seats: 1
+  });
 
   const onChangeHandler = (event) => {
     event.preventDefault();
@@ -33,9 +35,7 @@ const SearchFormMode = () => {
   }
 
   const onSubmit = () => {
-    console.log(findObject);
     dispatch(findTrip({ ...findObject }));
-    setFindObject({ startPoint: '', endPoint: '', date: '', seats: '' });
     return navigate('/tripoffer');
   }
 
@@ -45,13 +45,13 @@ const SearchFormMode = () => {
         <input className={`${styles.searchForm__input} ${errors.startPoint ? styles.searchForm__error : ''}`}
           {...register("startPoint")}
           type="text" id="startPoint" name="startPoint"
-          placeholder="Звідки" value={findObject.startPoint}
+          placeholder="Звідки"
           onChange={onChangeHandler} />
 
         <input className={`${styles.searchForm__input} ${errors.endPoint && styles.searchForm__error}`}
           {...register("endPoint")}
           type="text" id="endPoint" name="endPoint"
-          placeholder="Куди" value={findObject.endPoint}
+          placeholder="Куди"
           onChange={onChangeHandler} />
 
         <input className={`${styles.searchForm__input} ${styles.searchForm__input_special}`} {...register("date")} type="date" id="userDate" name="date"

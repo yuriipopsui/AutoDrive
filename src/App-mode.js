@@ -1,6 +1,7 @@
 import styles from './AppMode.module.scss';
+import { useEffect } from 'react';
 import { Routes, Route, Outlet } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Header from './components/Header/Header';
 import HomeMode from './components/Home/HomeMode';
 import PassengersMode from './components/Passengers/PassengersMode';
@@ -11,13 +12,19 @@ import DriversMode from './components/Drivers/DriversMode';
 import TripOffer from './components/TripOffer/TripOffer';
 import { findTripSelector } from './store/selectors/findTripSelector';
 import TripOfferAll from './components/TripOffer/TripOfferAll/TripOfferAll';
+import TripInfo from './components/TripInfo/TripInfo';
+import { getTripsOperation } from './store/reducers/driversReducer';
 
-
-const AppMode = (props) => {
+const AppMode = () => {
+  const dispatch = useDispatch();
 
   const tripsRequest = useSelector(tripSearchSelector);
   const tripsOffer = useSelector(tripOfferSelector);
   const findTripObject = useSelector(findTripSelector);
+
+  useEffect(() => {
+    dispatch(getTripsOperation())
+  }, [])
 
   return (
     <div className={styles.App}>
@@ -36,11 +43,10 @@ const AppMode = (props) => {
               <Route path="" element={<DriversMode tripsOffer={tripsOffer} />} />
               <Route path="all_trips" element={<TripOfferAll tripsOffer={tripsOffer} />} />
             </Route>
-
-            {/* <Route path="drivers" element={<DriversMode tripsOffer={tripsOffer} />} /> */}
-            <Route path="tripoffer" element={<TripOffer tripsOffer={tripsOffer} find={findTripObject} />} />
-            {/* <Route path="tripsearch" element={< TripSearch tripsRequest={tripsRequest} />} /> */}
-
+            <Route path="tripoffer">
+              <Route path="" element={<TripOffer tripsOffer={tripsOffer} find={findTripObject} />} />
+              <Route path="trip_info/:tripId" element={<TripInfo />} />
+            </Route>
           </Routes>
 
         </div>

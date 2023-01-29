@@ -1,26 +1,21 @@
 import React, { useState, useLayoutEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { getFilteredTrips } from '../../store/reducers/driversReducer';
 import Button from '../common/Button/Button';
 import styles from './TripOffer.module.scss';
 import TripOfferCard from './TripOfferCard/TripOfferCard';
 
 
-const TripOffer = ({ tripsOffer, find }) => {
+const TripOffer = ({ find }) => {
 
-  const [offerTrips, setOfferTrips] = useState(tripsOffer);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [offerTrips, setOfferTrips] = useState([]);
 
   useLayoutEffect(() => {
-    let start = tripsOffer.filter(trip => {
-      return trip.startPoint === find.startPoint;
-    })
-    let filtered = start.filter(trip => {
-      return trip.endPoint === find.endPoint;
-    })
-    console.log(filtered);
-    setOfferTrips(filtered);
-  }, [tripsOffer, find.startPoint, find.endPoint])
-
-  // console.log(offerTrips)
-  // console.log(find);
+    dispatch(getFilteredTrips(find, setOfferTrips))
+  }, [dispatch, find])
 
   const timeSortingEarlier = () => {
     const result = offerTrips.slice().sort((x, y) =>
@@ -34,6 +29,11 @@ const TripOffer = ({ tripsOffer, find }) => {
       +y.time.split('').slice(0, 2).join('') - +x.time.split('').slice(0, 2).join('')
     );
     setOfferTrips(result);
+  }
+
+  const onCardClickHandler = (id) => {
+
+    return navigate(`trip_info/${id}`);
   }
 
   return <div className={styles.tripOffer}>
@@ -52,9 +52,9 @@ const TripOffer = ({ tripsOffer, find }) => {
           ?
           <h2>Вибачте, але за Вашим маршрутом поїздок не знайдено!</h2>
           :
-          offerTrips.map((elem, index) => {
+          offerTrips.map((elem) => {
             return (
-              <TripOfferCard trip={elem} key={index} />
+              <TripOfferCard trip={elem} key={elem._id} onClick={(e) => onCardClickHandler(elem.id, elem)} />
             );
           })}
     </div>

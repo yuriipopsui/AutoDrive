@@ -2,14 +2,17 @@ import React, { useState } from 'react';
 import Button from '../../common/Button/Button';
 import styles from './TripOfferAll.module.scss';
 import TripOfferCard from '../TripOfferCard/TripOfferCard';
+import { useEffect } from 'react';
 
 // TripOfferAll just render All Triips from data base ( This page is more for the developer, almost service Page )
-const TripOfferAll = ({ tripsOffer }) => {
 
+const TripOfferAll = ({ tripsOffer }) => {
+  console.log(tripsOffer);
   const [offerTrips, setOfferTrips] = useState(tripsOffer);
 
-  // console.log(offerTrips)
-  // console.log(find);
+  useEffect(() => {
+    setOfferTrips(tripsOffer)
+  }, [tripsOffer])
 
   const timeSortingEarlier = () => {
     const result = offerTrips.slice().sort((x, y) =>

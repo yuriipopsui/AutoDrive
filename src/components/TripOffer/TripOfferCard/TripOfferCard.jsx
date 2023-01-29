@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './TripOfferCard.module.scss';
 
-const TripOfferCard = ({ trip, trip: { startPoint, endPoint, seats, date, time, rate = 5 } }) => {
+const TripOfferCard = ({ trip, trip: { startPoint, endPoint, seats, date, time, rate = 5 }, onClick }) => {
   let endWord = (seats) => {
     let lastLetter = null;
     let lastNumber = seats.toString().split('').slice(-1);
@@ -22,7 +22,7 @@ const TripOfferCard = ({ trip, trip: { startPoint, endPoint, seats, date, time, 
   }
 
   return (
-    <div className={styles.offerCard}>
+    <div className={styles.offerCard} onClick={onClick}>
       {!trip && <h2>There are no offers on your route!</h2>}
       <div className={styles.offerCard__route}>
         <div className={styles.offerCard__route_point}>{startPoint}</div>

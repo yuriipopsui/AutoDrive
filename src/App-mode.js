@@ -24,7 +24,7 @@ const AppMode = () => {
 
   useEffect(() => {
     dispatch(getTripsOperation())
-  }, [])
+  }, [dispatch]);
 
   return (
     <div className={styles.App}>

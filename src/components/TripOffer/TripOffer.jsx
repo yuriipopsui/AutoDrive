@@ -54,7 +54,7 @@ const TripOffer = ({ find }) => {
           :
           offerTrips.map((elem) => {
             return (
-              <TripOfferCard trip={elem} key={elem._id} onClick={(e) => onCardClickHandler(elem.id, elem)} />
+              <TripOfferCard trip={elem} key={elem._id} onClick={(e) => onCardClickHandler(elem._id)} />
             );
           })}
     </div>

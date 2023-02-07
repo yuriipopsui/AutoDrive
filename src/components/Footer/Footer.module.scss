@@ -4,7 +4,6 @@
   color: #fff;
   display: flex;
   align-items: center;
-  // justify-content: center;
   justify-content: space-around;
 
   // &__wrapper {
@@ -16,5 +15,10 @@
 
   & a {
     color: #fff;
+    transition: all 0.8s;
+
+    &:hover {
+      border-bottom: 1px solid #fff;
+    }
   }
 }

@@ -1,5 +1,6 @@
 .tripOffer {
   width: 95vw;
+
   display: grid;
   grid-template-columns: [manage] 1fr [content] 2fr;
 
@@ -38,5 +39,6 @@
     grid-column: content;
     color: #c4c4c4;
     margin: auto;
+    height: max-content;
   }
 }

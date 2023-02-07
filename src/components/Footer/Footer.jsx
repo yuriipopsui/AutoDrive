@@ -11,6 +11,18 @@ const Footer = (props) => {
           Тел.: +380672300954
         </a>
       </div>
+      <div className={styles.footer__copyright}>
+        <a className={styles.footer__tel} href="https://github.com/yuriipopsui/AutoDrive">
+          Project on GitHub
+        </a>
+      </div>
+      <div className={styles.footer__copyright}>
+
+        <a className={styles.footer__tel} href="https://github.com/MaxPopsuy">
+          API for project: GitHub
+        </a>
+      </div>
+
     </div>
   )
 }

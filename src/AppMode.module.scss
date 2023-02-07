@@ -12,11 +12,9 @@ a {
 }
 
 .main {
-  // display: grid;
-  // grid-template-columns: [sidebar] 1fr [content] 4fr;
   display: flex;
   justify-content: center;
-  height: 90vh;
+  min-height: 70vh;
 
   &__sidebar {
     // grid-column: sidebar;

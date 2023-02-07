@@ -4,6 +4,7 @@ import { Routes, Route, Outlet } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import Header from './components/Header/Header';
 import HomeMode from './components/Home/HomeMode';
+import Footer from './components/Footer/Footer';
 import PassengersMode from './components/Passengers/PassengersMode';
 import TripSearch from './components/TripSearch/TripSearch';
 import { tripSearchSelector } from './store/selectors/tripSearchSelector';
@@ -52,6 +53,7 @@ const AppMode = () => {
         </div>
       </div>
       <Outlet />
+      <Footer />
     </div>
   )
 }

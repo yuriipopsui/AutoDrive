@@ -15,6 +15,7 @@ import { findTripSelector } from './store/selectors/findTripSelector';
 import TripOfferAll from './components/TripOffer/TripOfferAll/TripOfferAll';
 import TripInfo from './components/TripInfo/TripInfo';
 import { getTripsOperation } from './store/reducers/driversReducer';
+import SuccessBooking from './components/Passengers/SuccessBooking/SuccessBooking';
 
 const AppMode = () => {
   const dispatch = useDispatch();
@@ -39,6 +40,7 @@ const AppMode = () => {
             <Route path="passengers">
               <Route path="" element={< PassengersMode tripsOffer={tripsOffer} />} />
               <Route path="tripsearch" element={< TripSearch tripsRequest={tripsRequest} />} />
+              <Route path="confirm_booking/:tripId" element={< SuccessBooking />} />
             </Route>
             <Route path="drivers">
               <Route path="" element={<DriversMode tripsOffer={tripsOffer} />} />

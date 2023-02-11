@@ -1,9 +1,47 @@
 .tripInfo {
   width: 80vw;
-
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   &__container {
     width: 80vw;
-    background-color: #cecece;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    box-shadow: 14px 0 18px #c4c4c4;
+    border-radius: 15px;
+  }
+
+  &__route,
+  &__dateTime,
+  &__seats {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 32px;
+    line-height: 36px;
+    font-weight: 900;
+    color: #00ffff;
+    border-bottom: 3px dashed green;
+  }
+
+  &__dateTime {
+    font-size: 26px;
+    color: green;
+    border-bottom: none;
+  }
+
+  &__seats {
+    justify-content: center;
+    margin-bottom: 25px;
+    border-bottom: none;
+    // color: #fff;
   }
 }

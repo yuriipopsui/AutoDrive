@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './TripInfo.module.scss';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { getTripInfoOperation } from '../../store/reducers/driversReducer';
 import Button from '../common/Button/Button';
@@ -8,6 +8,7 @@ import Button from '../common/Button/Button';
 const TripInfo = () => {
   const params = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [tripInfo, setTripInfo] = useState();
 
@@ -15,7 +16,11 @@ const TripInfo = () => {
 
   useEffect(() => {
     dispatch(getTripInfoOperation(params.tripId, setTripInfo));
-  }, [dispatch, params.tripId])
+  }, [dispatch, params.tripId]);
+
+  const onHandleClick = () => {
+    return navigate(`/passengers/confirm_booking/${params.tripId}`);
+  }
 
   return (
     <>
@@ -37,9 +42,9 @@ const TripInfo = () => {
               <div className={styles.tripInfo__time}>{tripInfo.time}</div>
             </div>
             <div className={styles.tripInfo__seats}>
-              Залишилось Місць: {tripInfo.seats}
+              Залишилось місць: {tripInfo.seats}
             </div>
-            <Button className={styles.tripInfo__button} buttonTitle="Забронювати" buttonColor="lightblue" />
+            <Button className={styles.tripInfo__button} buttonTitle="Забронювати" buttonColor="white" onClick={onHandleClick} />
           </div>
         }
       </div>

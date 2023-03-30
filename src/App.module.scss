@@ -12,19 +12,17 @@ a {
 }
 
 .main {
-  display: grid;
-  grid-template-columns: [sidebar] 1fr [content] 4fr;
-  height: 90vh;
+  display: flex;
+  justify-content: center;
+  min-height: 70vh;
 
   &__sidebar {
-    grid-column: sidebar;
+    // grid-column: sidebar;
     background-color: #f5f5f5;
     box-shadow: 5px 0 5px #c4c4c4;
   }
 
-  &__content {
-    grid-column: content;
-  }
-
-
+  // &__content {
+  // grid-column: content;
+  // }
 }

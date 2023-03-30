@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import styles from './CreateForm.module.scss';
+import styles from './CreateTripForm.module.scss';
 import { createTripOperation } from '../../../store/reducers/driversReducer';
 
 const schema = Yup.object().shape({

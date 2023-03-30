@@ -1,10 +1,13 @@
 .home {
 
+  width: 95vw;
+
   &__title {
-    padding-top: 30px;
-    margin: auto;
+    // padding-top: 30px;
+    // margin: auto;
     font-size: 30px;
     color: #1e1e1e;
+    margin-bottom: 20px;
   }
 
   &__text {
@@ -12,56 +15,24 @@
     font-size: 16px;
     line-height: 24px;
     font-weight: 600;
-    color: #fff;
-    width: 70vw;
-
+    color: rgb(5, 71, 82);
+    width: 95vw;
   }
 
   &__container {
-    background-image: url('../../../public/assets/top_banner.jpg');
-    min-height: 90vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+    background-color: #f5f5f5;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     margin: 0 auto;
   }
 
-  &__form {
-    width: 80vw;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    // margin-bottom: 30px;
-
-    &_input input {
-      display: flex;
-      flex-direction: column;
-      width: 35vw;
-      font-size: 18px;
-      line-height: 32px;
-      margin: 5px 10px;
-      border-radius: 5px;
-      padding-left: 10px;
-      border: none;
-    }
-
-    &_input label {
-      font-size: 18px;
-      line-height: 22px;
-      color: #1e1e1e;
-      font-weight: 600;
-    }
-
-    &_button {
-      font-size: 18px;
-      font-weight: 600;
-      padding: 15px 25px;
-      background-color: lightblue;
-      margin: 30px auto;
-      border: 2px solid #f5f5f5;
-      border-radius: 7px;
-      cursor: pointer;
-    }
+  &__banner {
+    height: 40vh;
+    width: 100%;
+    margin-top: 30px;
+    background: rgba(61, 204, 229, 0.5);
   }
 }

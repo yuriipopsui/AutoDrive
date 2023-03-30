@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { findTrip } from '../../../store/reducers/createTripReducer'
-import styles from './SearchFormMode.module.scss';
+import styles from './SearchTripForm.module.scss';
 
 // Yup is for Validation form
 
@@ -17,7 +17,7 @@ let schema = Yup.object().shape({
 
 //Searchform for Search of trips. 
 
-const SearchFormMode = () => {
+const SearchForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { register, handleSubmit, formState: { errors }, clearErrors } = useForm({
@@ -75,5 +75,5 @@ const SearchFormMode = () => {
   )
 }
 
-export default SearchFormMode;
+export default SearchForm;
 

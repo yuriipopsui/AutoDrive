@@ -14,6 +14,8 @@ import TripOfferAll from './components/TripOffer/TripOfferAll/TripOfferAll';
 import TripInfo from './components/TripInfo/TripInfo';
 import { getTripsOperation } from './store/reducers/driversReducer';
 import SuccessBooking from './components/Passengers/SuccessBooking/SuccessBooking';
+import Login from './components/Login/Login';
+import RegisterForm from './components/Register/Register';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -46,6 +48,8 @@ const App = () => {
               <Route path="" element={<TripOffer tripsOffer={tripsOffer} find={findTripObject} />} />
               <Route path="trip_info/:tripId" element={<TripInfo />} />
             </Route>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<RegisterForm />} />
           </Routes>
 
         </div>

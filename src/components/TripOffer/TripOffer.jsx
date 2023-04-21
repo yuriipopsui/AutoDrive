@@ -1,14 +1,16 @@
 import React, { useState, useLayoutEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { getFilteredTrips } from '../../store/reducers/driversReducer';
 import Button from '../common/Button/Button';
 import styles from './TripOffer.module.scss';
 import TripOfferCard from './TripOfferCard/TripOfferCard';
+import { findTripSelector } from '../../store/selectors/findTripSelector';
 
 
-const TripOffer = ({ find }) => {
+const TripOffer = () => {
 
+  const find = useSelector(findTripSelector);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [offerTrips, setOfferTrips] = useState([]);
@@ -32,7 +34,6 @@ const TripOffer = ({ find }) => {
   }
 
   const onCardClickHandler = (id) => {
-
     return navigate(`trip_info/${id}`);
   }
 
